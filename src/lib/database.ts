@@ -5,7 +5,7 @@ let db: Database | null = null;
 export async function initDatabase(): Promise<Database> {
   if (db) return db;
 
-  const wasmResponse = await fetch('/sql-wasm.wasm');
+  const wasmResponse = await fetch('./sql-wasm.wasm');
   const wasmBuffer = await wasmResponse.arrayBuffer();
 
   const SQL = await initSqlJs({
